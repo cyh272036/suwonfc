@@ -9,14 +9,14 @@ const Product = (props) => {
     let text_one = {
         marginTop: '10px',
         fontFamily: 'pretendard',
-        fontSize: '1.1rem',
+        fontSize: '1.3rem',
         fontWeight: 700,
         color: "#000",
     }
 
     let text_two = {
         fontFamily: 'pretendard',
-        fontSize: '0.9rem',
+        fontSize: '1.1rem',
         fontWeight: 300,
         paddingBottom: '30px',
         marginTop: '-5px',
@@ -27,7 +27,7 @@ const Product = (props) => {
         <Col md={4}>
             <Nav.Link onClick={() => 
             navigate('/detail/' + res[i])}>
-            <img src={goods.imgUrl} width="80%" alt='item' style={{border: '1px solid #eee'}}/>
+            <img src={goods.imgUrl} width="100%" alt='item' style={{border: '1px solid #eee'}}/>
             <h4 style={text_one}>{goods.title}</h4>
             <p style={text_two}>{goods.price}원</p>
             </Nav.Link>

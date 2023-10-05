@@ -20,7 +20,7 @@ function App() {
         <Container className='header'>
           <Navbar.Brand onClick={() => { navigate('/') }} className='lg'></Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link onClick={() => { navigate('/') }}>전체</Nav.Link>
+            <Nav.Link onClick={() => { navigate('/all') }}>전체</Nav.Link>
             <Nav.Link onClick={() => { navigate('/detail') }}>유니폼</Nav.Link>
             <Nav.Link onClick={() => { navigate('/club') }}>구단용품</Nav.Link>
             <Nav.Link onClick={() => { navigate('/cheering') }}>응원용품</Nav.Link>
