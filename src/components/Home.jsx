@@ -14,26 +14,7 @@ const Home = (props) => {
   let origin = data;
   let [more, setMore] = useState(data2);
   let [count, setCount] = useState(1);
-  console.log(count)
-
-  function moreData () {
-    if (count === 1) {
-      axios.get("https://cyh272036.github.io/suwonfc_data/data2.js").then((more2) => {
-        let copy = [...more, more2.data];
-        setMore(copy);
-        setCount(2);
-      })
-    } else if (count === 2) {
-      axios.get("https://cyh272036.github.io/suwonfc_data/data3.js").then((more3) => {
-        let copy = [...more, ...more3.data];
-        setMore(copy);
-        setCount(3);
-      })
-    } else {
-      alert("더이상 상품이 없습니다")
-    }
-  }
-
+  console.log(count);
 
 let buttonStyle = {
   backgroundColor: '#0B1648',
@@ -139,6 +120,7 @@ return (
         </ToggleButton>
       </ToggleButtonGroup>
     </div>
+
     <Container style={{ marginTop: '80px' }}>
       <Row>
         {
@@ -151,7 +133,7 @@ return (
       </Row>
     </Container>
 
-    <Container>
+    {/* <Container>
       <Row>
         {
           more.map((a, i) => {
@@ -159,9 +141,26 @@ return (
           })
         }
       </Row>
-    </Container>
+    </Container> */}
 
-    <Button variant="primary" style={buttonStyle3} onClick={moreData}> + 3개 상품 더보기</Button>
+    <Button variant="primary" style={buttonStyle3} onClick={() => {
+       if (count === 1) {
+        axios.get("https://cyh272036.github.io/suwonfc_data/data2.js").then((result) => {
+          let copy = [...more, result.data];
+          console.log(copy)
+          setMore(copy);
+          setCount(2);
+        })
+      } else if (count === 2) {
+        axios.get("https://cyh272036.github.io/suwonfc_data/data3.js").then((result) => {
+          let copy = [...more, ...result.data];
+          setMore(copy);
+          setCount(3);
+        })
+      } else {
+        alert("더이상 상품이 없습니다")
+      }
+    }}> + 3개 상품 더보기</Button>
     
     {/* 수원FC 소식 카드*/}
     <div className="card_wrap">
