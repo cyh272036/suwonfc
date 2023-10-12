@@ -1,10 +1,12 @@
 import './App.scss';
-import { Routes, Route, useNavigate, Outlet } from 'react-router-dom';
-import { Container, Navbar, Nav, Carousel, Card, Button } from 'react-bootstrap';
+import { useMediaQuery } from 'react-responsive'
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Container, Navbar, Nav } from 'react-bootstrap';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import Home from './components/Home';
 import Detail from './components/Detail';
 import data from './data';
-import Product from './components/Product';
 import { useState } from 'react';
 
 function App() {
@@ -12,7 +14,7 @@ function App() {
 
 
   let navigate = useNavigate();
-  let [res, setRes] = useState([0,1,2,3,4,5,6,7,8]);
+  let [res, setRes] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8]);
 
   return (
     <div className="App">
@@ -30,13 +32,18 @@ function App() {
             <Nav.Link onClick={() => { navigate('/my') }} className='my'></Nav.Link>
             <Nav.Link onClick={() => { navigate('/cart') }} className='cart'></Nav.Link>
           </Nav>
+          <DropdownButton id="dropdown-basic-button" title="" className='dropdown'>
+              <Dropdown.Item href="#/action-1">검색</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">마이페이지</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">장바구니</Dropdown.Item>
+            </DropdownButton>
         </Container>
       </Navbar>
 
       <Routes>
-        <Route path='/' element={<Home goods={goods} res={res} setGoods={setGoods} setRes = {setRes} origin={origin}></Home>}></Route>
+        <Route path='/' element={<Home goods={goods} res={res} setGoods={setGoods} setRes={setRes} origin={origin}></Home>}></Route>
         <Route path='/detail/:id' element={<Detail goods={goods}></Detail>}></Route>
-        <Route path='/about' element={<div>About</div>}></Route> 
+        <Route path='/about' element={<div>About</div>}></Route>
         <Route path='/about/member' element={<div>멤버입니다</div>}></Route>
         <Route path='/about/location' element={<div>위치입니다</div>}></Route>
       </Routes>

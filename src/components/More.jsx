@@ -2,7 +2,8 @@ import React from 'react'
 import { Col } from 'react-bootstrap'
 
 const More = (props) => {
-    const { title, price,imgUrl } = props.more
+    const { title, price, imgUrl } = props.more
+    console.log(props)
     return (
         <Col md={4}>
             <img src={imgUrl} width="100%" alt='moreImg' style={{ border: '1px solid #eee' }} />

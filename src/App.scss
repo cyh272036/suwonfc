@@ -5,6 +5,51 @@
 // font-family: 'pretendard', sans-serif;
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
+// // 모바일
+// $mobile: 335px;
+// // 모바일에서 태블릿
+// $tabletToMobile: 535px;
+// // 태블릿
+// $tablet: 720px;
+// // 태블릿에서 노트북
+// $laptopToTablet: 960px;
+// // 노트북
+// $laptop: 1024px;
+// // 노트북에서 데스크탑
+// $desktopToLaptop: 1500px;
+// // 데스크탑
+// $desktop: 1800px;
+
+// @mixin mobile{
+//   @media (max-width: $mobile){
+//     @content;
+//   }
+// }
+
+// @mixin tabletToMobile{
+//   @media (max-width: $tabletToMobile) and (min-width: $tablet){
+//     @content;
+//   }
+// }
+
+// @mixin tablet{
+//   @media (max-width: $tabletToMobile) and (min-width: $tablet){
+//     @content;
+//   }
+// }
+
+// @mixin laptopToTablet{
+//   @media (max-width: $tabletToMobile) and (min-width: $tablet){
+//     @content;
+//   }
+// }
+
+// @mixin desktop{
+//   @media (max-width: $de){
+    
+//   }
+// }
+
 html,
 body {
   color: #000;
@@ -14,7 +59,6 @@ body {
 }
 
 .App {
-
   .header_big {
     height: 13vh;
     width: 100%;
@@ -89,12 +133,19 @@ body {
           background-image: url(../public/img/icon3_1.png);
         }
       }
+
+      .btn-primary {
+        background-color: #fff;
+        border: none;
+        color: #0B1648;
+        display: none;
+      }
     }
   }
 
   .slide {
     width: 100%;
-    height: 96vh;
+    height: 100vh;
     overflow: hidden;
     background-position: center;
 
