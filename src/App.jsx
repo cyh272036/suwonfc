@@ -1,5 +1,4 @@
 import './App.scss';
-import { useMediaQuery } from 'react-responsive'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -11,10 +10,8 @@ import { useState } from 'react';
 
 function App() {
   let [goods, setGoods] = useState(data);
-
-
-  let navigate = useNavigate();
   let [res, setRes] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8]);
+  let navigate = useNavigate();
 
   return (
     <div className="App">
@@ -32,11 +29,21 @@ function App() {
             <Nav.Link onClick={() => { navigate('/my') }} className='my'></Nav.Link>
             <Nav.Link onClick={() => { navigate('/cart') }} className='cart'></Nav.Link>
           </Nav>
-          <DropdownButton id="dropdown-basic-button" title="" className='dropdown'>
-              <Dropdown.Item href="#/action-1">검색</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">마이페이지</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">장바구니</Dropdown.Item>
-            </DropdownButton>
+
+          <DropdownButton
+            variant="secondary"
+            title=" Menu "
+            data-bs-theme="dark"
+          >
+            <Dropdown.Item href="#/action-1">전체</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">유니폼</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">구단용품</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">응원용품</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item href="#/action-1">검색</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">마이페이지</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">장바구니</Dropdown.Item>
+          </DropdownButton>
         </Container>
       </Navbar>
 

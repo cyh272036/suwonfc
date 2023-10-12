@@ -1,40 +1,40 @@
 import React from 'react'
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
-import Row from 'react-bootstrap/Row';
+import { Container, Col, Row, Card } from 'react-bootstrap';
 
 const About = () => {
 
-    let index_wrap = {
-        width: '1300px',
-        height: 'auto',
-        margin: '0 auto',
-        marginTop: '100px',
-    }
+    return (
 
-    let index = {
-        width: '650px',
-        height: '500px',
-        marginBottom: '10px'
-    }
-  return (
-    <div style={index_wrap}>
-    <Row>
-        <Col  md={6}>
-            <Image src="./img/index.jpg" style={index}/>
-        </Col>
-        <Col  md={6}>
-            <Image src="./img/index2.jpg" style={index}/>
-        </Col>
-        <Col md={6}>
-            <Image src="./img/index3.jpg" style={index}/>
-        </Col>
-        <Col  md={6}>
-            <Image src="./img/index4.jpg" style={index}/>
-        </Col>
-    </Row>
-    </div>
-  )
+        <Container style={{ marginTop: '100px' }}>
+        <Row>
+
+          <Col md={12} xl={6}>
+            <Card style={{ marginBottom: '20px' }}>
+              <Card.Img src="./img/index.jpg" />
+            </Card>
+          </Col>
+
+          <Col md={12} xl={6}>
+            <Card style={{ marginBottom: '20px' }}>
+              <Card.Img src="./img/index2.jpg" />
+            </Card>
+          </Col>
+
+          <Col md={12} xl={6}>
+            <Card style={{ marginBottom: '20px' }}>
+              <Card.Img src="./img/index3.jpg"/>
+            </Card>
+          </Col>
+
+          <Col md={12} xl={6}>
+            <Card>
+              <Card.Img src="./img/index4.jpg"/>
+            </Card>
+          </Col>
+
+        </Row>
+      </Container>
+    )
 }
 
 export default About

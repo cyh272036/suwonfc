@@ -1,7 +1,7 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 
 
 
@@ -32,11 +32,28 @@ const Best = () => {
       <div className='insta_title'>
         <h1><span>BEST </span>PRODUCT</h1>
       </div>
-
+    <Container>
       <Swiper
         slidesPerView={3}
         spaceBetween={15}
         centeredSlides={true}
+        breakpoints={{
+          // when window width is >= 320px
+          270: {
+            slidesPerView: 1,
+            spaceBetween: 0
+          },
+          // when window width is >= 768px
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          // when window width is >= 1200px
+          1200: {
+            slidesPerView: 3,
+            spaceBetween: 30
+          }
+        }}
         pagination={{
           clickable: true,
         }}
@@ -101,6 +118,7 @@ const Best = () => {
           </div>
         </SwiperSlide>
       </Swiper>
+      </Container>
 
       <Link to="./all">
         <Button variant="primary" style={buttonStyle3}>전체보기</Button>
