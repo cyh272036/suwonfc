@@ -20,15 +20,6 @@ const Home = (props) => {
   let [more, setMore] = useState(data2);
   let [count, setCount] = useState(1);
 
-  //
-  let buttonStyle = {
-    backgroundColor: '#0B1648',
-    border: 'none',
-    padding: 0,
-    fontFamily: 'pretendard',
-    padding: '20px 30px'
-  }
-
   let buttonStyle3 = {
     backgroundColor: '#0B1648',
     border: 'none',
@@ -42,7 +33,7 @@ const Home = (props) => {
   }
 
   return (
-    <>
+    <div>
       <div className='slider'></div>
 
       {/* slider */}
@@ -95,23 +86,23 @@ const Home = (props) => {
       <Container>
         <div className='button_box'>
           <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
-            <ToggleButton id="tbg-radio-1" sm={6} style={buttonStyle} value={1} onClick={() => {
+            <ToggleButton id="tbg-radio-1" sm={6} className="multi_button" value={1} onClick={() => {
               let copy = [...origin]
               setGoods(copy);
             }}>전체
             </ToggleButton>
-            <ToggleButton id="tbg-radio-2" sm={6} style={buttonStyle} value={2} onClick={() => {
+            <ToggleButton id="tbg-radio-2" sm={6} className="multi_button" value={2} onClick={() => {
               let copy = [...origin].filter(goods => goods.content === 'a')
               setGoods(copy);
             }}>
               유니폼
             </ToggleButton>
-            <ToggleButton id="tbg-radio-3" sm={6} style={buttonStyle} value={3} onClick={() => {
+            <ToggleButton id="tbg-radio-3" sm={6} className="multi_button" value={3} onClick={() => {
               let copy = [...origin].filter(goods => goods.content === 'b')
               setGoods(copy);
             }}>구단용품
             </ToggleButton>
-            <ToggleButton id="tbg-radio-4" sm={6} style={buttonStyle} value={3} md={6} onClick={() => {
+            <ToggleButton id="tbg-radio-4" sm={6} className="multi_button" value={3} md={6} onClick={() => {
               let copy = [...origin].filter(goods => goods.content === 'c')
               setGoods(copy);
             }}>응원용품
@@ -132,9 +123,10 @@ const Home = (props) => {
       <div className='banner'>
       </div>
 
-      {/* New(more) */}
+      {/* only  New(more) */}
       <div className='insta_title'>
-        <h1>LIMITED <span>EDITION</span></h1>
+        <h1>ONLINE <span>ONLY</span></h1>
+        <p>수원FC 공식 온라인몰에서만 만나볼 수 있는 제품들</p>
       </div>
 
       <Container style={{ marginTop: '80px' }}>
@@ -168,7 +160,7 @@ const Home = (props) => {
 
       {/* footer */}
       <Footer></Footer>
-    </>
+    </div>
   )
 }
 

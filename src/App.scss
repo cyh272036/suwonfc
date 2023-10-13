@@ -335,6 +335,12 @@ body {
 .button_box {
   text-align: center;
   margin-top: 50px;
+
+  .multi_button{
+    background-color: #0B1648;
+    border: none;
+    padding: 20px 30px;
+  }
 }
 
 .banner {
@@ -361,6 +367,12 @@ body {
     span {
       color: #0B1648;
     }
+  }
+
+  p{
+    font-family: 'pretendard', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
   }
 }
 
@@ -477,4 +489,17 @@ body {
 
 .nav-link2:hover {
   opacity: 0.5;
+}
+
+
+// detail
+
+.detail{
+  position: relative;
+  top: 180px;
+}
+
+.size{
+  height: 40px;
+  margin-bottom: 20px;
 }

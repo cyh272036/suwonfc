@@ -31,6 +31,7 @@ const Best = () => {
     <>
       <div className='insta_title'>
         <h1><span>BEST </span>PRODUCT</h1>
+        <p>수원FC 팬들에게 가장 사랑받고 있는 제품들</p>
       </div>
     <Container>
       <Swiper

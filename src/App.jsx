@@ -35,14 +35,14 @@ function App() {
             title=" Menu "
             data-bs-theme="dark"
           >
-            <Dropdown.Item href="#/action-1">전체</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">유니폼</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">구단용품</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">응원용품</Dropdown.Item>
+            <Dropdown.Item href="all">전체</Dropdown.Item>
+            <Dropdown.Item href="detail">유니폼</Dropdown.Item>
+            <Dropdown.Item href="club">구단용품</Dropdown.Item>
+            <Dropdown.Item href="cheering">응원용품</Dropdown.Item>
             <Dropdown.Divider />
-            <Dropdown.Item href="#/action-1">검색</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">마이페이지</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">장바구니</Dropdown.Item>
+            <Dropdown.Item href="search">검색</Dropdown.Item>
+            <Dropdown.Item href="my">마이페이지</Dropdown.Item>
+            <Dropdown.Item href="cart">장바구니</Dropdown.Item>
           </DropdownButton>
         </Container>
       </Navbar>

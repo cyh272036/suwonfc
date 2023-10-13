@@ -26,9 +26,10 @@ let buttonStyle3 = {
 
 const Instagram = () => {
   return (
-    <>
+    <div>
       <div className='insta_title'>
         <h1><span>SUWONFC </span> INSTAGRAM</h1>
+        <p>수원FC 소식을 공식 인스타그램을 통해 만나보세요</p>
       </div>
       <Button variant="primary" style={buttonStyle3} onClick={() => { window.open(url) }}>Go to SuwonFC</Button>
       <Container>
@@ -88,7 +89,7 @@ const Instagram = () => {
         </SwiperSlide>
       </Swiper>
       </Container>
-    </>
+    </div>
   )
 }
 

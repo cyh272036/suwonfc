@@ -24,7 +24,7 @@ const Product = (props) => {
     }
 
     return (
-        <Col md={4}>
+        <Col md={6} lg={4}>
             <Nav.Link onClick={() => 
             navigate('/detail/' + res[i])}>
             <img src={goods.imgUrl} width="100%" alt='item' style={{border: '1px solid #eee'}}/>
