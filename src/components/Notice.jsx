@@ -29,7 +29,7 @@ const Notice = () => {
 
           <Col md={6} xl={3}>
             <Card>
-              <Card.Img variant="top" src='../img/card_1.jpg' className='card_img' />
+              <Card.Img variant="top" src='./img/card_1.jpg' className='card_img' />
               <Card.Body>
                 <Card.Title style={card_text_one}>한정판 레트로 유니폼 출시</Card.Title>
                 <Card.Text style={card_text_two}>
@@ -44,7 +44,7 @@ const Notice = () => {
 
           <Col md={6} xl={3}>
             <Card>
-              <Card.Img variant="top" src='../img/card_2.jpg' className='card_img' />
+              <Card.Img variant="top" src='./img/card_2.jpg' className='card_img' />
               <Card.Body>
                 <Card.Title style={card_text_one}>소지품 검사 강화 안내</Card.Title>
                 <Card.Text style={card_text_two}>
@@ -58,7 +58,7 @@ const Notice = () => {
 
           <Col md={6} xl={3}>
             <Card>
-              <Card.Img variant="top" src='../img/card_3.jpg' className='card_img' />
+              <Card.Img variant="top" src='./img/card_3.jpg' className='card_img' />
               <Card.Body>
                 <Card.Title style={card_text_one}>WELCOME 바우테르손</Card.Title>
                 <Card.Text style={card_text_two}>
@@ -73,7 +73,7 @@ const Notice = () => {
 
           <Col md={6} xl={3}>
             <Card>
-              <Card.Img variant="top" src='../img/card_4.jpg' className='card_img' />
+              <Card.Img variant="top" src='./img/card_4.jpg' className='card_img' />
               <Card.Body>
                 <Card.Title style={card_text_one}>팬 일레븐 투표 안내</Card.Title>
                 <Card.Text style={card_text_two}>
