@@ -9,13 +9,15 @@ import Footer from './Footer';
 import data from '../data';
 import Notice from './Notice';
 import More from './More';
-import Product from './Product'
+import Product from './Product';
+import data2 from '../data2';
+
 
 const Home = (props) => {
 
   let { goods, setGoods } = props;
   let origin = data;
-  let [more, setMore] = useState(data);
+  let [more, setMore] = useState(data2);
   let [count, setCount] = useState(1);
 
   //
@@ -68,10 +70,10 @@ const Home = (props) => {
           <Card style={{ backgroundColor: 'transparent', border: 'none', textAlign: 'center' }}>
             <Card.Body style={{ backgroundColor: 'transparent', border: 'none' }}>
               <Card.Title style={{ fontSize: '3.5vh', fontWeight: 'bold' }}>WE ARE SUWON FC</Card.Title>
-              <Card.Text style={{ fontSize: '1.7vh' , wordBreak: 'keep-all' }}>
+              <Card.Text style={{ fontSize: '1.7vh', wordBreak: 'keep-all' }}>
                 <span style={{ marginBottom: '0' }}>수원FC가 걸어온 길이, 곧 한국축구의 역사입니다.<br></br>
-                  2003년 수원시청 직장운동경기부로 시작해 실업리그를 거쳐 2부 리그 입성과 실업리그 출신 팀으로는 
-                  처음으로 이뤄낸 K리그 진출까지, <br></br> 우리나라에서 축구의 열정을 가장 잘 보여준 팀이었습니다. 
+                  2003년 수원시청 직장운동경기부로 시작해 실업리그를 거쳐 2부 리그 입성과 실업리그 출신 팀으로는
+                  처음으로 이뤄낸 K리그 진출까지, <br></br> 우리나라에서 축구의 열정을 가장 잘 보여준 팀이었습니다.
                   2부 리그 강등에도 굴하지 않고, 다시 1부 리그에 진출하며 그 질주를 이어가고 있습니다.</span>
               </Card.Text>
             </Card.Body>
@@ -129,11 +131,12 @@ const Home = (props) => {
       {/* 베너 */}
       <div className='banner'>
       </div>
-      
-      {/* 베너 */}
+
+      {/* New(more) */}
       <div className='insta_title'>
-        <h1><span>BEST </span>PRODUCT</h1>
+        <h1>LIMITED <span>EDITION</span></h1>
       </div>
+
       <Container style={{ marginTop: '80px' }}>
         <Row>
           {more.map((a, i) => (
