@@ -22,13 +22,13 @@ const More = (props) => {
     }
 
     return (
-        <div>
-            <Col md={6} lg={4}>
-                <img src={process.env.PUBLIC_URL+imgUrl} width="100%" alt='moreImg' style={{ border: '1px solid #eee' }} />
-                <h4 style={text_one}>{title}</h4>
-                <p style={text_two}>{price}원</p>
-            </Col>
-        </div>
+
+        <Col md={6} lg={4}>
+            <img src={process.env.PUBLIC_UR + imgUrl} width="100%" alt='moreImg' style={{ border: '1px solid #eee' }} />
+            <h4 style={text_one}>{title}</h4>
+            <p style={text_two}>{price}원</p>
+        </Col>
+
     )
 }
 
