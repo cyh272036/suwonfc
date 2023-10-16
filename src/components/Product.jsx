@@ -27,7 +27,7 @@ const Product = (props) => {
         <Col md={6} lg={4}>
             <Nav.Link onClick={() => 
             navigate('/detail/' + res[i])}>
-            <img src={goods.imgUrl} width="100%" alt='item' style={{border: '1px solid #eee'}}/>
+            <img src={process.env.PUBLIC_URL+goods.imgUrl} width="100%" alt='item' style={{border: '1px solid #eee'}}/>
             <h4 style={text_one}>{goods.title}</h4>
             <p style={text_two}>{goods.price}원</p>
             </Nav.Link>
