@@ -29,7 +29,7 @@ const Instagram = () => {
     <div>
       <div className='insta_title'>
         <h1><span>SUWONFC </span> INSTAGRAM</h1>
-        <p>수원FC 소식을 공식 인스타그램을 통해 만나보세요</p>
+        <p>수원FC 공식 인스타그램을 통해 다양한 소식을 만나보세요</p>
       </div>
       <Button variant="primary" style={buttonStyle3} onClick={() => { window.open(url) }}>Go to SuwonFC</Button>
       <Container>

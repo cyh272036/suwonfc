@@ -390,7 +390,7 @@ body {
 
 .swiper {
   margin-top: 70px;
-  margin-bottom: 200px;
+  margin-bottom: 50px;
   --swiper-navigation-size: 30px;
   --swiper-theme-color: #ffffff;
 }
@@ -502,4 +502,14 @@ body {
 .size{
   height: 40px;
   margin-bottom: 20px;
+}
+
+.DetailSwiper{
+  .swiper-button-prev{
+    color: #0B1648;    
+    }
+
+  .swiper-button-next{
+  color: #0B1648;    
+  }
 }

@@ -9,6 +9,8 @@ const Footer = () => {
         backgroundColor: '#0B1648',
         display: 'flex',
         alignItems: 'center',
+        position: 'relative',
+        top: '300px'
     }
 
     let icon_box = {
@@ -66,13 +68,13 @@ const Footer = () => {
                         </Card.Text>
                         <Nav defaultActiveKey="/home" as="ul" style={icon_box}>
                             <Nav.Item as="li">
-                                <img src="./img/instagram.png" alt="instagram" style={{ width: '45px' }} />
+                                <img src="../img/instagram.png" alt="instagram" style={{ width: '45px' }} />
                             </Nav.Item>
                             <Nav.Item as="li">
-                                <img src="./img/facebook.png" alt="facebook" style={{ width: '45px' }} />
+                                <img src="../img/facebook.png" alt="facebook" style={{ width: '45px' }} />
                             </Nav.Item>
                             <Nav.Item as="li">
-                                <img src="./img/youtube.png" alt="youtube" style={{ width: '45px' }} />
+                                <img src="../img/youtube.png" alt="youtube" style={{ width: '45px' }} />
                             </Nav.Item>
                         </Nav>
                     </Card.Body>
