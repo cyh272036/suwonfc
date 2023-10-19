@@ -2,15 +2,16 @@ import React from 'react'
 
 const Title = () => {
     let css1 = {
-        marginTop: '150px',
         textAlign: 'center',
         fontFamily: 'Public Sans',
         fontSize: '2.5rem',
-        fontWeight: 800
+        fontWeight: 800,
+        width: '90%',
+        margin: '0 auto',
     }
 
     let css2 = {
-      marginbottom: '150px',
+      marginTop: '10px',
       textAlign: 'center',
       fontFamily: 'pretendard',
       fontSize: '1.5rem',

@@ -21,14 +21,14 @@ let buttonStyle3 = {
   position: 'relative',
   left: '50%',
   transform: 'translate(-50%,0)',
-  marginTop: '30px'
+  marginTop: '10px'
 }
 
 const Instagram = () => {
   return (
     <div>
       <div className='insta_title'>
-        <h1><span>SUWONFC </span> INSTAGRAM</h1>
+        <h1>SUWON FC  <span>INSTAGRAM</span></h1>
         <p>수원FC 공식 인스타그램을 통해 다양한 소식을 만나보세요</p>
       </div>
       <Button variant="primary" style={buttonStyle3} onClick={() => { window.open(url) }}>Go to SuwonFC</Button>

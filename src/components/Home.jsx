@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Container, Row, Carousel, Button, ToggleButtonGroup, ToggleButton, Card } from 'react-bootstrap';
 import axios from 'axios';
+
 import Title from './Title';
 import Instagram from './Instagram';
 import Best from './Best';
@@ -11,6 +12,7 @@ import Notice from './Notice';
 import More from './More';
 import Product from './Product';
 import data2 from '../data2';
+import Video from './Video';
 
 
 const Home = (props) => {
@@ -19,6 +21,7 @@ const Home = (props) => {
   let origin = data;
   let [more, setMore] = useState(data2);
   let [count, setCount] = useState(1);
+
 
   let buttonStyle3 = {
     backgroundColor: '#0B1648',
@@ -60,8 +63,8 @@ const Home = (props) => {
         <Container>
           <Card style={{ backgroundColor: 'transparent', border: 'none', textAlign: 'center' }}>
             <Card.Body style={{ backgroundColor: 'transparent', border: 'none' }}>
-              <Card.Title style={{ fontSize: '3.5vh', fontWeight: 'bold' }}>WE ARE SUWON FC</Card.Title>
-              <Card.Text style={{ fontSize: '1.7vh', wordBreak: 'keep-all' }}>
+              <Card.Title className='we_headline'>WE ARE SUWON FC</Card.Title>
+              <Card.Text className='we_text'>
                 <span style={{ marginBottom: '0' }}>수원FC가 걸어온 길이, 곧 한국축구의 역사입니다.<br></br>
                   2003년 수원시청 직장운동경기부로 시작해 실업리그를 거쳐 2부 리그 입성과 실업리그 출신 팀으로는
                   처음으로 이뤄낸 K리그 진출까지, <br></br> 우리나라에서 축구의 열정을 가장 잘 보여준 팀이었습니다.
@@ -84,28 +87,28 @@ const Home = (props) => {
       {/* 제품 */}
       <Title></Title>
       <Container>
-        <div className='button_box'>
+        <div className='button_box' style={{marginTop: '30px'}}>
           <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
             <ToggleButton id="tbg-radio-1" sm={6} className="multi_button" value={1} onClick={() => {
               let copy = [...origin]
               setGoods(copy);
-            }}>전체
+            }}><p>전체</p>
             </ToggleButton>
             <ToggleButton id="tbg-radio-2" sm={6} className="multi_button" value={2} onClick={() => {
               let copy = [...origin].filter(goods => goods.content === 'a')
               setGoods(copy);
             }}>
-              유니폼
+              <p>유니폼</p>
             </ToggleButton>
             <ToggleButton id="tbg-radio-3" sm={6} className="multi_button" value={3} onClick={() => {
               let copy = [...origin].filter(goods => goods.content === 'b')
               setGoods(copy);
-            }}>구단용품
+            }}><p>구단용품</p>
             </ToggleButton>
             <ToggleButton id="tbg-radio-4" sm={6} className="multi_button" value={3} md={6} onClick={() => {
               let copy = [...origin].filter(goods => goods.content === 'c')
               setGoods(copy);
-            }}>응원용품
+            }}><p>응원용품</p>
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
@@ -154,6 +157,9 @@ const Home = (props) => {
           alert("더이상 상품이 없습니다")
         }
       }}> + 3개 상품 더보기</Button>
+      
+      {/* 유튜브 */}
+      <Video></Video>
 
       {/* 인스타 */}
       <Instagram></Instagram>

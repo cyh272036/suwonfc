@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 const Product = (props) => {
     let navigate = useNavigate();
-    let {goods, i, res} = props;
-
+    let {goods, i} = props;
+    
     let text_one = {
         marginTop: '10px',
         fontFamily: 'pretendard',
@@ -26,7 +26,7 @@ const Product = (props) => {
     return (
         <Col md={6} lg={4}>
             <Nav.Link onClick={() => 
-            navigate('/detail/' + res[i])}>
+            navigate('/detail/' + goods.id)}>
             <img src={process.env.PUBLIC_URL + goods.imgUrl} width="100%" alt='item' style={{border: '1px solid #eee'}}/>
             <h4 style={text_one}>{goods.title}</h4>
             <p style={text_two}>{goods.price}원</p>
