@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+
 import { useDispatch, useSelector } from 'react-redux';
-import { addCount, minCount, removeProduct } from '../store'; // 액션 임포트 경로에 맞게 수정하세요
-import { Button, Container, Table, Alert } from 'react-bootstrap';
+import { addCount, minCount, removeProduct, sortName } from '../store';
+import { Button, Container, Table, Alert, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+
+import data2 from '../data2';
+import More from './More';
 import Footer from './Footer';
 
 const Cart = () => {
   const dispatch = useDispatch();
   const navigator = useNavigate();
   const buttonStyle = {
-    border: '1px solid #eee',
-    backgroundColor: 'transparent',
+    border: 'none',
+    backgroundColor: '#0B1648',
+    color: '#fff',
     margin: '0 10px',
+    height: '30px',
+    width: '30px',
+    lineHeight: '10px',
+    fontSize: '16px'
   };
 
   // Redux 상태에서 장바구니 정보 가져오기
@@ -44,6 +54,21 @@ const Cart = () => {
     }
   };
 
+  let [more, setMore] = useState(data2);
+  let [count, setCount] = useState(1);
+
+  let buttonStyle3 = {
+    backgroundColor: '#0B1648',
+    border: 'none',
+    fontFamily: 'pretendard',
+    fontSize: '1.2rem',
+    padding: '15px 30px',
+    position: 'relative',
+    left: '50%',
+    transform: 'translate(-50%,0)',
+    marginTop: '30px',
+  }
+
   return (
     <>
       <Container style={{ paddingTop: '200px' }}>
@@ -62,7 +87,7 @@ const Cart = () => {
             {cartItems.map((v, i) => (
               <tr key={i}>
                 <td>
-                  <img src={v.img} style={{ width: '60px' }} alt={v.name} />
+                  <img src={v.img} style={{ width: '100px', border: '1px solid #eee' }} alt={v.name} />
                 </td>
                 <td>{v.name}</td>
                 <td>{v.size}</td>
@@ -95,22 +120,7 @@ const Cart = () => {
             ))}
           </tbody>
         </Table>
-        <div className="d-flex justify-content-center">
-          <Button
-            variant="outline-primary"
-            className="mx-1"
-            style={{ backgroundColor: '#0B1648', border: 'none', color: '#fff' }}
-          >
-            상품더보기
-          </Button>
-          <Button
-            variant="outline-primary"
-            className="mx-1"
-            style={{ border: '1px solid #c0c0c0', color: '#000' }}
-          >
-            이름순정렬
-          </Button>
-        </div>
+
         <Alert
           style={{
             backgroundColor: '#eee',
@@ -135,6 +145,58 @@ const Cart = () => {
             </Button>
           </div>
         </Alert>
+
+        <div className="d-flex justify-content-center">
+          <Button
+            variant="outline-primary"
+            className="mx-1"
+            style={{ backgroundColor: '#0B1648', border: 'none', color: '#fff' }}
+          >
+            상품더보기
+          </Button>
+
+          <Button
+            variant="outline-primary"
+            className="mx-1"
+            style={{ border: '1px solid #c0c0c0', color: '#000' }}
+            onClick={() => {
+              dispatch(sortName())
+            }}
+          >가격순정렬
+          </Button>
+        </div>
+
+         {/* only  New(more) */}
+      <div className='insta_title'>
+        <h1>ONLINE <span>ONLY</span></h1>
+        <p>수원FC 공식 온라인몰에서만 만나볼 수 있는 제품들</p>
+      </div>
+
+      <Container style={{ marginTop: '80px' }}>
+        <Row>
+          {more.map((a, i) => (
+            <More more={more[i]} key={i}></More>
+          ))}
+        </Row>
+      </Container>
+
+      <Button variant="primary" style={buttonStyle3} onClick={() => {
+        if (count === 1) {
+          axios.get("https://cyh272036.github.io/suwonfc_data/data2.json").then((data2) => {
+            let copy = [...more, ...data2.data];
+            setMore(copy);
+            setCount(2);
+          })
+        } else if (count === 2) {
+          axios.get("https://cyh272036.github.io/suwonfc_data/data3.json").then((data3) => {
+            let copy = [...more, ...data3.data];
+            setMore(copy);
+            setCount(3);
+          })
+        } else {
+          alert("더이상 상품이 없습니다")
+        }
+      }}> + 3개 상품 더보기</Button>
       </Container>
       <Footer />
     </>

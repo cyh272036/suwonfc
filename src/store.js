@@ -18,11 +18,17 @@ let cart = createSlice({
       }
     },
     addItem(state,action){
-      state.push(action.payload)
+      const newItem = action.payload;
+      const existingItem = state.find(item => item.id === newItem.id);
+      if (existingItem) {
+        existingItem.count++;
+      } else {
+        state.push(newItem);
+      }
     },
     sortName(state){
       state.sort((a,b) => 
-        a.name > b.name ? 1:-1 
+        a.price > b.price ? 1:-1 
       );
     },
     removeProduct(state, action) {

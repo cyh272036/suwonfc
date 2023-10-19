@@ -64,7 +64,7 @@ const Best = () => {
         className="mySwiper"
       >
         <SwiperSlide className='best'>
-          <img src="./img/best.jpg" alt="best" />
+          <img src="./img/best.jpg" alt="best"/>
           <div className='best_text'>
             <h3>2023 수원FC 레트로 레플리카 유니폼</h3>
           </div>

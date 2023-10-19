@@ -25,8 +25,8 @@ function App() {
           <Nav className="me-auto">
             <Nav.Link onClick={() => { navigate('/all') }}>전체</Nav.Link>
             <Nav.Link onClick={() => { navigate('/detail/0') }}>유니폼</Nav.Link>
-            <Nav.Link onClick={() => { navigate('/club') }}>구단용품</Nav.Link>
-            <Nav.Link onClick={() => { navigate('/cheering') }}>응원용품</Nav.Link>
+            <Nav.Link onClick={() => { navigate('/detail/7') }}>구단용품</Nav.Link>
+            <Nav.Link onClick={() => { navigate('/detail/3') }}>응원용품</Nav.Link>
           </Nav>
           <Nav className="me-auto two">
             <Nav.Link onClick={() => { navigate('/search') }} className='search'></Nav.Link>
@@ -39,10 +39,10 @@ function App() {
             title=" Menu "
             data-bs-theme="dark"
           >
-            <Dropdown.Item href="all">전체</Dropdown.Item>
-            <Dropdown.Item href="detail">유니폼</Dropdown.Item>
-            <Dropdown.Item href="club">구단용품</Dropdown.Item>
-            <Dropdown.Item href="cheering">응원용품</Dropdown.Item>
+            <Dropdown.Item>전체</Dropdown.Item>
+            <Dropdown.Item onClick={() => { navigate('/detail/0') }}>유니폼</Dropdown.Item>
+            <Dropdown.Item onClick={() => { navigate('/detail/7') }}>구단용품</Dropdown.Item>
+            <Dropdown.Item onClick={() => { navigate('/detail/3') }}>응원용품</Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Item href="search">검색</Dropdown.Item>
             <Dropdown.Item href="my">마이페이지</Dropdown.Item>

@@ -78,7 +78,13 @@ const Detail = (props) => {
   };
 
   const handleSelectNum = (e) => {
-    setSelected({ ...Selected, number: e.target.value });
+    let additionalCost = 0;
+
+    if(e.target.value !== "없음"){
+      additionalCost = 15000;
+    }
+
+    setSelected({ ...Selected, number: e.target.value , additionalCost});
   }
 
   let [call, setCall] = useState(1);
