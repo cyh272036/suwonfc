@@ -71,10 +71,10 @@ const Detail = (props) => {
     "96. 강민성(+15,000원)"
   ];
 
-  const [Selected, setSelected] = useState({ size: "", number: "" });
+  const [selected, setSelected] = useState({ size: "", number: "" , additionalCost: 0});
 
   const handleSelectSize = (e) => {
-    setSelected({ ...Selected, size: e.target.value });
+    setSelected({ ...selected, size: e.target.value });
   };
 
   const handleSelectNum = (e) => {
@@ -84,7 +84,7 @@ const Detail = (props) => {
       additionalCost = 15000;
     }
 
-    setSelected({ ...Selected, number: e.target.value , additionalCost});
+    setSelected({ ...selected, number: e.target.value , additionalCost});
   }
 
   let [call, setCall] = useState(1);
@@ -146,7 +146,7 @@ const Detail = (props) => {
                   <select
                     onChange={handleSelectSize}
                     name="size"
-                    value={Selected.size}
+                    value={selected.size}
                     className="size"
                   >
                     {selectList.map((item) => (
@@ -161,7 +161,7 @@ const Detail = (props) => {
                   <h6>선수 이름 번호 선택</h6>
                   <select onChange={handleSelectNum}
                     name="number"
-                    value={Selected.number}
+                    value={selected.number}
                     className="size"
                   >
                     {selectListTwo.map((item) => (
@@ -183,7 +183,7 @@ const Detail = (props) => {
                   <h6>사이즈</h6>
                   <select onChange={handleSelectSize}
                     name="size"
-                    value={Selected.size}
+                    value={selected.size}
                     className="size"
                   >
                     {selectList.map((item) => (
@@ -214,10 +214,18 @@ const Detail = (props) => {
             </p>
 
             {/* 장바구니, 구매버튼 */}
+            <p>총 가격 : {selected.additionalCost > 0 ? (selproduct.price + selected.additionalCost) : selproduct.price}원</p>
             <Button variant='light'
               style={{ width: '100px', height: '50px', border: '1px solid #eee', textAlign: 'center' }}
-              onClick={() => {
-                dispatch(addItem({ id: selproduct.id, img: selproduct.imgUrl, name: selproduct.title, price: selproduct.price, count: call, ...Selected }));
+              onClick={() => { 
+                const totalCost = (selproduct.price + selected.additionalCost)*call;
+                dispatch(addItem({ 
+                  id: selproduct.id, 
+                  img: selproduct.imgUrl, 
+                  name: selproduct.title, 
+                  price: totalCost, 
+                  count: call, 
+                  ...selected }));
                 navigator('/cart')
               }}>장바구니</Button>
             <Button variant='primary' style={{ backgroundColor: "#0B1648", border: "none", marginLeft: '10px', width: '100px', height: '50px' }} onClick={() => {

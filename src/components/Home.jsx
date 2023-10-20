@@ -12,7 +12,6 @@ import Notice from './Notice';
 import More from './More';
 import Product from './Product';
 import data2 from '../data2';
-import Video from './Video';
 
 
 const Home = (props) => {
@@ -158,8 +157,6 @@ const Home = (props) => {
         }
       }}> + 3개 상품 더보기</Button>
       
-      {/* 유튜브 */}
-      <Video></Video>
 
       {/* 인스타 */}
       <Instagram></Instagram>

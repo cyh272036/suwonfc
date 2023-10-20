@@ -10,7 +10,7 @@ const Product = (props) => {
         marginTop: '10px',
         fontFamily: 'pretendard',
         fontSize: '1.3rem',
-        fontWeight: 700,
+        fontWeight: 800,
         color: "#000",
     }
 
