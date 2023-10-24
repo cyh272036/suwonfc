@@ -93,13 +93,12 @@ const Detail = (props) => {
   useEffect(() => {
   }, [totalCost])
 
-
   return (
     <>
       <Container className='detail'>
         <Row>
           <Col md={6} style={{ marginBottom: '50px' }}>
-            <img src={selproduct.imgUrl} width="100%" alt='detail'></img>
+            <img src={process.env.PUBLIC_URL + selproduct.imgUrl} width="100%" alt='detail'></img>
           </Col>
 
           <Col md={6} style={{ paddingLeft: '30px' }}>
