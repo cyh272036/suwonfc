@@ -95,16 +95,7 @@ const Cart = () => {
                 <td>{v.number}</td>
                 <td>{v.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
                 <td>
-                  <button
-                    style={buttonStyle}
-                    onClick={() => {
-                      dispatch(addCount(v.id));
-                    }}
-                  >
-                    -
-                  </button>
-                  {v.count}
-                  <button
+                <button
                     style={buttonStyle}
                     onClick={() => {
                       if (v.count === 1) {
@@ -114,8 +105,20 @@ const Cart = () => {
                       }
                     }}
                   >
+                    -
+                  </button>
+                
+                  {v.count}
+
+                  <button
+                    style={buttonStyle}
+                    onClick={() => {
+                      dispatch(addCount(v.id));
+                    }}
+                  >
                     +
                   </button>
+
                 </td>
               </tr>
             ))}
