@@ -88,7 +88,7 @@ const Cart = () => {
             {cartItems.map((v, i) => (
               <tr key={i}>
                 <td>
-                  <img src={v.img} style={{ width: '100px', border: '1px solid #eee' }} alt={v.name} />
+                  <img src={process.env.PUBLIC_URL + v.img} style={{ width: '100px', border: '1px solid #eee' }} alt={v.name} />
                 </td>
                 <td>{v.name}</td>
                 <td>{v.size}</td>
@@ -101,7 +101,7 @@ const Cart = () => {
                       dispatch(addCount(v.id));
                     }}
                   >
-                    +
+                    -
                   </button>
                   {v.count}
                   <button
@@ -114,7 +114,7 @@ const Cart = () => {
                       }
                     }}
                   >
-                    -
+                    +
                   </button>
                 </td>
               </tr>

@@ -37,23 +37,22 @@ const Home = (props) => {
   return (
     <div>
       <div className='slider'></div>
-
       {/* slider */}
       <Carousel fade className='slide' interval={2000}>
         <Carousel.Item>
-          <img src='./img/slide.jpg' alt='slideimg' style={{ backgroundPosition: 'center' }}></img>
+          <img src={process.env.PUBLIC_URL + '/img/slide.jpg'} alt='slideimg' style={{ backgroundPosition: 'center' }}></img>
         </Carousel.Item>
 
         <Carousel.Item>
-          <img src='./img/slide2.jpg' alt='slideimg'></img>
+            <img src={process.env.PUBLIC_URL + '/img/slide2.jpg'} alt='slideimg'></img>
         </Carousel.Item>
 
         <Carousel.Item>
-          <img src='./img/slide4.jpg' alt='slideimg'></img>
+          <img src={process.env.PUBLIC_URL + '/img/slide4.jpg'} alt='slideimg'></img>
         </Carousel.Item>
 
         <Carousel.Item>
-          <img src='./img/slide5.jpg' alt='slideimg'></img>
+          <img src={process.env.PUBLIC_URL + '/img/slide5.jpg'} alt='slideimg'></img>
         </Carousel.Item>
       </Carousel>
 

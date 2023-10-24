@@ -46,13 +46,13 @@ const Footer = () => {
                         </Card.Text>
                         <Nav defaultActiveKey="/home" as="ul" style={icon_box}>
                             <Nav.Item as="li">
-                                <img src="../img/instagram.png" alt="instagram" style={{ width: '45px' }} />
+                                <img src={process.env.PUBLIC_URL + "/img/instagram.png"} alt="instagram" style={{ width: '45px' }} />
                             </Nav.Item>
                             <Nav.Item as="li">
-                                <img src="../img/facebook.png" alt="facebook" style={{ width: '45px' }} />
+                                <img src={process.env.PUBLIC_URL + "/img/facebook.png"} alt="facebook" style={{ width: '45px' }} />
                             </Nav.Item>
                             <Nav.Item as="li">
-                                <img src="../img/youtube.png" alt="youtube" style={{ width: '45px' }} />
+                                <img src={process.env.PUBLIC_URL + "/img/youtube.png"} alt="youtube" style={{ width: '45px' }} />
                             </Nav.Item>
                         </Nav>
                     </Card.Body>

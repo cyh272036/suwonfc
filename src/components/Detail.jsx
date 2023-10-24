@@ -253,8 +253,8 @@ const Detail = (props) => {
         >
           <Tab eventKey="home" title="상세정보">
             <Card style={{ border: 'none', paddingTop: '30px', width: '80%', margin: '0 auto' }}>
-              <img src="../img/more.jpg" alt="more" />
-              <img src="../img/more2.jpg" alt="more" />
+              <img src={process.env.PUBLIC_URL + "/img/more.jpg"} alt="more" />
+              <img src={process.env.PUBLIC_URL + "/img/more2.jpg"} alt="more" />
             </Card>
           </Tab>
 
@@ -311,22 +311,22 @@ const Detail = (props) => {
           className="DetailSwiper"
         >
           <SwiperSlide>
-            <img src="/img/goods_5.png" alt="goods" />
+            <img src={process.env.PUBLIC_URL + "/img/goods_5.png"} alt="goods" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/goods_4.png" alt="instagram" />
+            <img src={process.env.PUBLIC_URL + "/img/goods_4.png"} alt="instagram" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/best4.png" alt="instagram" />
+            <img src={process.env.PUBLIC_URL + "/img/best4.png"} alt="instagram" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/goods_13.png" alt="instagram" />
+            <img src={process.env.PUBLIC_URL + "/img/goods_13.png"} alt="instagram" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/goods_7.png" alt="instagram" />
+            <img src={process.env.PUBLIC_URL + "/img/goods_7.png"} alt="instagram" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="/img/goods_17.png" alt="instagram" />
+            <img src={process.env.PUBLIC_URL + "/img/goods_17.png"} alt="instagram" />
           </SwiperSlide>
         </Swiper>
       </Container>

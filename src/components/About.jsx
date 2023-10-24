@@ -10,25 +10,25 @@ const About = () => {
 
           <Col md={12} xl={6}>
             <Card style={{ marginBottom: '20px' }}>
-              <Card.Img src="./img/index.jpg" />
+              <Card.Img src={process.env.PUBLIC_URL + "/img/index.jpg"} />
             </Card>
           </Col>
 
           <Col md={12} xl={6}>
             <Card style={{ marginBottom: '20px' }}>
-              <Card.Img src="./img/index2.jpg" />
+              <Card.Img src={process.env.PUBLIC_URL + "/img/index2.jpg"} />
             </Card>
           </Col>
 
           <Col md={12} xl={6}>
             <Card style={{ marginBottom: '20px' }}>
-              <Card.Img src="./img/index3.jpg"/>
+              <Card.Img src={process.env.PUBLIC_URL + "/img/index3.jpg"}/>
             </Card>
           </Col>
 
           <Col md={12} xl={6}>
             <Card>
-              <Card.Img src="./img/index4.jpg"/>
+              <Card.Img src={process.env.PUBLIC_URL + "/img/index4.jpg"}/>
             </Card>
           </Col>
 

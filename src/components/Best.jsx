@@ -68,7 +68,7 @@ const Best = () => {
         <SwiperSlide className='best' onClick={() => {
           navigator('/detail/0')
         }}>
-          <img src="./img/best.jpg" alt="best"/>
+          <img src={process.env.PUBLIC_URL + "/img/best.jpg"} alt="best"/>
           <div className='best_text'>
             <h3>2023 수원FC 레트로 레플리카 유니폼</h3>
           </div>
@@ -77,7 +77,7 @@ const Best = () => {
         <SwiperSlide className='best' onClick={() => {
           navigator('/detail/0')
         }}>
-          <img src="./img/best2.png" alt="best" />
+          <img src={process.env.PUBLIC_URL + "/img/best2.png"} alt="best" />
           <div className='best_text'>
             <h3>'우리승우' 캐릭터 젤리 휴대폰 케이스</h3>
           </div>
@@ -86,7 +86,7 @@ const Best = () => {
         <SwiperSlide className='best' onClick={() => {
           navigator('/detail/0')
         }}>
-          <img src="./img/best3.jpg" alt="best"/>
+          <img src={process.env.PUBLIC_URL + "/img/best3.jpg"}alt="best"/>
           <div className='best_text'>
             <h3>수원FC 휴대폰 스트랩</h3>
           </div>
@@ -95,7 +95,7 @@ const Best = () => {
         <SwiperSlide className='best' onClick={() => {
           navigator('/detail/0')
         }}>
-          <img src="./img/best4.png" alt="best"/>
+          <img src={process.env.PUBLIC_URL + "/img/best4.png"} alt="best"/>
           <div className='best_text'>
             <h3>2023 수원FC HOME 레플리카 유니폼</h3>
           </div>
@@ -104,7 +104,7 @@ const Best = () => {
         <SwiperSlide className='best' onClick={() => {
           navigator('/detail/0')
         }}>
-          <img src="./img/best5.jpg" alt="best" />
+          <img src={process.env.PUBLIC_URL + "/img/best5.jpg"} alt="best" />
           <div className='best_text'>
             <h3>수원FC 리무버블 스티커 6종</h3>
           </div>
@@ -113,7 +113,7 @@ const Best = () => {
         <SwiperSlide className='best' onClick={() => {
           navigator('/detail/0')
         }}>
-          <img src="./img/best6.jpg" alt="best" />
+          <img src={process.env.PUBLIC_URL + "/img/best6.jpg"} alt="best" />
           <div className='best_text'>
             <h3>2022 수원FC/W THIRD 레플리카 유니폼</h3>
           </div>
@@ -122,7 +122,7 @@ const Best = () => {
         <SwiperSlide className='best' onClick={() => {
           navigator('/detail/0')
         }}>
-          <img src="./img/best7.jpg" alt="best" />
+          <img src={process.env.PUBLIC_URL + "/img/best7.jpg"} alt="best" />
           <div className='best_text'>
             <h3>2022 수원FC/W HOME 레플리카 유니폼</h3>
           </div>
@@ -131,7 +131,7 @@ const Best = () => {
         <SwiperSlide className='best' onClick={() => {
           navigator('/detail/0')
         }}>
-          <img src="./img/best8.png" alt="best" />
+          <img src={process.env.PUBLIC_URL + "/img/best8.png"} alt="best" />
           <div className='best_text'>
             <h3>수원FC 20주년 전사머플러 (블루골드)</h3>
           </div>

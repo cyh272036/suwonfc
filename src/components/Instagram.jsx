@@ -61,31 +61,31 @@ const Instagram = () => {
         className="Swiper"
       >
         <SwiperSlide>
-          <img src={process.env.PUBLIC_URL + /img/insta_1} alt="instagram" />
+          <img src={process.env.PUBLIC_URL + "/img/insta1.jpg"} alt="instagram" />
         </SwiperSlide>
         <SwiperSlide>
-        <img src={process.env.PUBLIC_URL + /img/insta_2} alt="instagram" />
+        <img src={process.env.PUBLIC_URL + "/img/insta2.jpg"} alt="instagram" />
         </SwiperSlide>
         <SwiperSlide>
-        <img src={process.env.PUBLIC_URL + /img/insta_3} alt="instagram" />
+        <img src={process.env.PUBLIC_URL + "/img/insta3.jpg"} alt="instagram" />
         </SwiperSlide>
         <SwiperSlide>
-        <img src={process.env.PUBLIC_URL + /img/insta_4} alt="instagram" />
+        <img src={process.env.PUBLIC_URL + "/img/insta4.jpg"} alt="instagram" />
         </SwiperSlide>
         <SwiperSlide>
-        <img src={process.env.PUBLIC_URL + /img/insta_5} alt="instagram" />
+        <img src={process.env.PUBLIC_URL + "/img/insta5.jpg"} alt="instagram" />
         </SwiperSlide>
         <SwiperSlide>
-        <img src={process.env.PUBLIC_URL + /img/insta_6} alt="instagram" />
+        <img src={process.env.PUBLIC_URL + "/img/insta6.jpg"} alt="instagram" />
         </SwiperSlide>
         <SwiperSlide>
-        <img src={process.env.PUBLIC_URL + /img/insta_7} alt="instagram" />
+        <img src={process.env.PUBLIC_URL + "/img/insta7.jpg"} alt="instagram" />
         </SwiperSlide>
         <SwiperSlide>
-        <img src={process.env.PUBLIC_URL + /img/insta_8} alt="instagram" />
+        <img src={process.env.PUBLIC_URL + "/img/insta8.jpg"} alt="instagram" />
         </SwiperSlide>
         <SwiperSlide>
-        <img src={process.env.PUBLIC_URL + /img/insta_9} alt="instagram" />
+        <img src={process.env.PUBLIC_URL + "/img/insta9.jpg"} alt="instagram" />
         </SwiperSlide>
       </Swiper>
       </Container>
