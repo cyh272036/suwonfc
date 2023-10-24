@@ -29,7 +29,7 @@ const Product = (props) => {
             navigate('/detail/' + goods.id)}>
             <img src={process.env.PUBLIC_URL + goods.imgUrl} width="100%" alt='item' style={{border: '1px solid #eee'}}/>
             <h4 style={text_one}>{goods.title}</h4>
-            <p style={text_two}>{goods.price}원</p>
+            <p style={text_two}>{goods.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원</p>
             </Nav.Link>
         </Col>
     )

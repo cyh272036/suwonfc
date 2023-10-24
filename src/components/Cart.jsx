@@ -12,7 +12,6 @@ import Footer from './Footer';
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const navigator = useNavigate();
   const buttonStyle = {
     border: 'none',
     backgroundColor: '#0B1648',
@@ -27,11 +26,13 @@ const Cart = () => {
   // Redux 상태에서 장바구니 정보 가져오기
   const cartItems = useSelector((state) => state.cart);
 
+  let navigator = useNavigate();
+
   // 총합을 계산하는 함수 (배송비 제외)
   const calculateSubtotal = (items) => {
     let sum = 0;
     for (let i = 0; i < items.length; i++) {
-      sum += items[i].count * items[i].price;
+      sum += items[i].price;
     }
     return sum;
   };
@@ -92,7 +93,7 @@ const Cart = () => {
                 <td>{v.name}</td>
                 <td>{v.size}</td>
                 <td>{v.number}</td>
-                <td>{v.price}</td>
+                <td>{v.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
                 <td>
                   <button
                     style={buttonStyle}
@@ -129,10 +130,10 @@ const Cart = () => {
             marginTop: '20px',
           }}
         >
-          <Alert.Heading>장바구니</Alert.Heading>
+          <Alert.Heading>결제금액</Alert.Heading>
           <hr />
           <p>
-            {`총합 : ${subtotal} + ${shippingCost}(배송비) = ${calculateTotal(subtotal, shippingCost)} 원`}
+            {`총합 : ${subtotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} + ${shippingCost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}(배송비) = ${calculateTotal(subtotal, shippingCost).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 원`}
           </p>
           <div className="d-flex justify-content-end">
             <Button
@@ -151,6 +152,9 @@ const Cart = () => {
             variant="outline-primary"
             className="mx-1"
             style={{ backgroundColor: '#0B1648', border: 'none', color: '#fff' }}
+            onClick={() => {
+              navigator('/all')
+            }}
           >
             상품더보기
           </Button>
@@ -194,7 +198,8 @@ const Cart = () => {
             setCount(3);
           })
         } else {
-          alert("더이상 상품이 없습니다")
+            alert("전체상품 페이지로 이동합니다.")
+            navigator('/all')
         }
       }}> + 3개 상품 더보기</Button>
       </Container>

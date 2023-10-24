@@ -7,7 +7,9 @@ let cart = createSlice({
   reducers: {
     addCount(state,action){
       let num = state.findIndex((a) => {return a.id === action.payload})
+      
       state[num].count++
+      state[num].price += state[num].basicprice
     },
     minCount(state,action){
       let num = state.findIndex((a) => a.id === action.payload);
@@ -15,13 +17,17 @@ let cart = createSlice({
         state.splice(num, 1);
       } else {
         state[num].count--;
+        state[num].price -= state[num].basicprice
       }
     },
     addItem(state,action){
       const newItem = action.payload;
-      const existingItem = state.find(item => item.id === newItem.id);
+      const existingItem = state.find(item => item.id === newItem.id && item.size === newItem.size && item.number === newItem.number);
+
       if (existingItem) {
-        existingItem.count++;
+        console.log(existingItem.count, newItem.count)
+        existingItem.price += parseInt(newItem.price)
+        existingItem.count += parseInt(newItem.count);
       } else {
         state.push(newItem);
       }
@@ -39,6 +45,7 @@ let cart = createSlice({
     }
   }
 })
+
 
 export const store = configureStore({
   reducer: {

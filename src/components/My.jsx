@@ -1,8 +1,11 @@
 import React from 'react'
 import { Row, Container, Button, Form, Card, Col } from 'react-bootstrap'
 import Footer from './Footer'
+import { useNavigate } from 'react-router-dom'
 
 const My = () => {
+
+    let navigator = useNavigate();
     return (
         <>
             <Container style={{ paddingTop: '200px', width: '80%' }}>
@@ -38,7 +41,9 @@ const My = () => {
                                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                     <Form.Check type="checkbox" label="회원정보 저장하기" />
                                 </Form.Group>
-                                <Button variant="primary" type="submit" style={{ backgroundColor: '#0B1648', border: 'none', marginBottom: '25px' }}>
+                                <Button variant="primary" type="submit" style={{ backgroundColor: '#0B1648', border: 'none', marginBottom: '25px' }} onClick={() => {
+                                    navigator('/cart')
+                                }}>
                                     로그인
                                 </Button>
                                 <div style={{ paddingTop: '20px', display: 'flex', flexDirection: 'column' }}>

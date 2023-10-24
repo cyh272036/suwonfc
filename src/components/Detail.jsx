@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button, Card, Tab, Tabs, Form, InputGroup, FormControl } from 'react-bootstrap'
 import { useParams, useNavigate } from 'react-router-dom';
 import Footer from "./Footer";
@@ -71,7 +71,7 @@ const Detail = (props) => {
     "96. 강민성(+15,000원)"
   ];
 
-  const [selected, setSelected] = useState({ size: "", number: "" , additionalCost: 0});
+  const [selected, setSelected] = useState({ size: "", number: "", additionalCost: 0 });
 
   const handleSelectSize = (e) => {
     setSelected({ ...selected, size: e.target.value });
@@ -80,31 +80,36 @@ const Detail = (props) => {
   const handleSelectNum = (e) => {
     let additionalCost = 0;
 
-    if(e.target.value !== "없음"){
+    if (e.target.value !== "없음") {
       additionalCost = 15000;
     }
 
-    setSelected({ ...selected, number: e.target.value , additionalCost});
+    setTotalCost((selproduct.price + additionalCost) * call)
+    setSelected({ ...selected, number: e.target.value, additionalCost });
   }
 
   let [call, setCall] = useState(1);
+  let [totalCost, setTotalCost] = useState(selproduct.price)
+  useEffect(() => {
+  }, [totalCost])
+
 
   return (
     <>
       <Container className='detail'>
         <Row>
           <Col md={6} style={{ marginBottom: '50px' }}>
-            <img src={'../img/goods_' + (Number(id) + 1) + '.png'} width="100%" alt='detail'></img>
+            <img src={selproduct.imgUrl} width="100%" alt='detail'></img>
           </Col>
 
           <Col md={6} style={{ paddingLeft: '30px' }}>
             <Card style={{ border: 'none', marginBottom: '25px' }}>
-              <h2>{goods[id].title}</h2>
-              <h4>{goods[id].price}원</h4>
+              <h2>{selproduct.title}</h2>
+              <h4>{selproduct.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원</h4>
             </Card>
 
             {/* 유니폼 (content,a) 일때만 보이게 */}
-            {goods[id].content === 'a' &&
+            {selproduct.content === 'a' &&
               <>
                 <Card style={{ border: 'none', marginBottom: '15px' }}><h6>* 마킹된 유니폼은 환불이 불가합니다.</h6></Card>
                 <Card style={{ border: 'none', marginBottom: '15px' }}>
@@ -139,7 +144,7 @@ const Detail = (props) => {
             </Card>
 
             {/* 유니폼 (content,a) 일때만 보이게 */}
-            {goods[id].content === 'a' &&
+            {selproduct.content === 'a' &&
               <>
                 <Card style={{ border: 'none' }}>
                   <h6>사이즈</h6>
@@ -177,7 +182,7 @@ const Detail = (props) => {
             }
 
             {/* 유니폼 외 티셔츠 사이즈 옵션 */}
-            {goods[id].only === 'size' &&
+            {selproduct.only === 'size' &&
               <Form>
                 <Card style={{ border: 'none' }}>
                   <h6>사이즈</h6>
@@ -196,7 +201,7 @@ const Detail = (props) => {
               </Form>
             }
 
-            <p>
+
               <InputGroup className="mb-3">
                 <InputGroup.Text id="inputGroup-sizing-default">
                   주문 개수
@@ -204,6 +209,7 @@ const Detail = (props) => {
                 <FormControl
                   onChange={(e) => {
                     setCall(e.target.value);
+                    setTotalCost((selproduct.price + selected.additionalCost) * e.target.value)
                   }}
                   value={call}
                   type='number'
@@ -211,26 +217,29 @@ const Detail = (props) => {
                   aria-describedby="inputGroup-sizing-default"
                 />
               </InputGroup>
-            </p>
+
 
             {/* 장바구니, 구매버튼 */}
-            <p>총 가격 : {selected.additionalCost > 0 ? (selproduct.price + selected.additionalCost) : selproduct.price}원</p>
-            <Button variant='light'
-              style={{ width: '100px', height: '50px', border: '1px solid #eee', textAlign: 'center' }}
-              onClick={() => { 
-                const totalCost = (selproduct.price + selected.additionalCost)*call;
-                dispatch(addItem({ 
-                  id: selproduct.id, 
-                  img: selproduct.imgUrl, 
-                  name: selproduct.title, 
-                  price: totalCost, 
-                  count: call, 
-                  ...selected }));
-                navigator('/cart')
-              }}>장바구니</Button>
-            <Button variant='primary' style={{ backgroundColor: "#0B1648", border: "none", marginLeft: '10px', width: '100px', height: '50px' }} onClick={() => {
+            <p>총 가격 : {totalCost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원</p>
+            <Button variant='light' style={{ border: '1px solid #eee', marginRight: '10px', width: '100px', height: '50px' }} onClick={() => {
               navigator('/my')
             }}>주문하기</Button>
+            <Button
+              style={{ width: '100px', height: '50px', border: '1px solid #eee', textAlign: 'center', backgroundColor: "#0B1648", border: "none" }}
+              onClick={() => {
+                const basicCost = selproduct.price + selected.additionalCost
+                // const totalCost = (selproduct.price + selected.additionalCost)*call;
+                dispatch(addItem({
+                  id: selproduct.id,
+                  img: selproduct.imgUrl,
+                  name: selproduct.title,
+                  basicprice: basicCost,
+                  price: totalCost,
+                  count: call,
+                  ...selected
+                }));
+                navigator('/cart')
+              }}>장바구니</Button>
           </Col>
         </Row>
 

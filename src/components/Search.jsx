@@ -10,7 +10,7 @@ const Search = () => {
             <Row className="g-2">
 
                 <Col xs={3}>
-                    <Form.Select style={{ height: '100%' }}>
+                    <Form.Select style={{ height: '100%' }} name='option'>
                         <option>옵션을 선택하세요</option>
                         <option value="1">전체</option>
                         <option value="2">유니폼</option>

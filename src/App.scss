@@ -105,6 +105,18 @@ body {
     }
   }
 
+  .we_wrap {
+    margin-top: 100px;
+    width: 100%;
+    height: 220px;
+    position: relative;
+    background-image: url(../public/img/bg.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+  }
+
   .we_headline{
     font-size: 1.5rem;
     font-weight: 700;
@@ -129,6 +141,7 @@ body {
     font-family: EsaManru;
     font-size: 0.85rem;
     color: #fff;
+    word-break: keep-all;
   }
 
   .footer_text{
@@ -139,6 +152,7 @@ body {
     font-weight: 300;
     margin-top: 1vw;
     font-size: 0.6rem;
+    word-break: keep-all;
   }
 }
 
@@ -232,6 +246,18 @@ body {
     }
   }
 
+  .we_wrap {
+    margin-top: 100px;
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-image: url(../public/img/bg.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+  }
+
   .we_headline{
     font-size: 2.2rem;
     font-weight: 700;
@@ -254,6 +280,7 @@ body {
     font-family: EsaManru;
     font-size: 0.9rem;
     color: #fff;
+    word-break: keep-all;
   }
 
   .footer_text{
@@ -264,6 +291,7 @@ body {
     font-weight: 300;
     margin-top: 1vw;
     font-size: 0.7rem;
+    word-break: keep-all;
   }
 }
 
@@ -356,6 +384,18 @@ body {
     }
   }
 
+  .we_wrap {
+    margin-top: 100px;
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-image: url(../public/img/bg.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+  }
+
   .we_headline{
     font-size: 3rem;
     font-weight: 700;
@@ -377,6 +417,7 @@ body {
     font-family: EsaManru;
     font-size: 1rem;
     color: #fff;
+    word-break: keep-all;
   }
 
   .footer_text{
@@ -387,6 +428,7 @@ body {
     font-weight: 300;
     margin-top: 1vw;
     font-size: 0.8rem;
+    word-break: keep-all;
   }
 }
 
@@ -395,25 +437,21 @@ body {
 // 
 .slide {
   width: 100%;
-  height: 100vh;
   overflow: hidden;
   background-position: center;
+  padding-top: 13vh;
 
   img {
-    height: 100%;
+    width: 100%;
   }
 }
 
-.we_wrap {
-  margin-top: 150px;
-  width: 100%;
-  height: 40vh;
-  position: relative;
-  background-image: url(../public/img/bg.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
+.carousel-control-prev{
+  padding-top: 13vh;
+}
+
+.carousel-control-next{
+  padding-top: 13vh;
 }
 
 .card {

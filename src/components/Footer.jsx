@@ -40,11 +40,9 @@ const Footer = () => {
                                 <Nav.Link eventKey="link-2" className='nav-link2'>사업자정보확인</Nav.Link>
                             </Nav.Item>
                         </Nav>
-                        <Card.Text>
-                            <p className='footer_text'>
+                        <Card.Text className='footer_text'>
                                 상호: (주)코어커뮤니케이션 | 대표: 이연규 대표 | 개인정보관리책임자: 김두원 팀장 | 전화: 02-3461-0527 | 이메일: core@corecomm.co.kr <br></br>
                                 주소: 서울 서초구 강남대로39길 15-11, 201호 | 사업자등록번호: 872-86-01261 | 통신판매: 2019-서울서초-0887 | 호스팅제공자: (주)식스샵
-                            </p>
                         </Card.Text>
                         <Nav defaultActiveKey="/home" as="ul" style={icon_box}>
                             <Nav.Item as="li">

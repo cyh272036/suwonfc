@@ -63,11 +63,11 @@ const Home = (props) => {
           <Card style={{ backgroundColor: 'transparent', border: 'none', textAlign: 'center' }}>
             <Card.Body style={{ backgroundColor: 'transparent', border: 'none' }}>
               <Card.Title className='we_headline'>WE ARE SUWON FC</Card.Title>
-              <Card.Text className='we_text'>
-                <span style={{ marginBottom: '0' }}>수원FC가 걸어온 길이, 곧 한국축구의 역사입니다.<br></br>
+              <Card.Text className='we_text' style={{ marginBottom: '0' }}>
+                수원FC가 걸어온 길이, 곧 한국축구의 역사입니다.<br></br>
                   2003년 수원시청 직장운동경기부로 시작해 실업리그를 거쳐 2부 리그 입성과 실업리그 출신 팀으로는
                   처음으로 이뤄낸 K리그 진출까지, <br></br> 우리나라에서 축구의 열정을 가장 잘 보여준 팀이었습니다.
-                  2부 리그 강등에도 굴하지 않고, 다시 1부 리그에 진출하며 그 질주를 이어가고 있습니다.</span>
+                  2부 리그 강등에도 굴하지 않고, 다시 1부 리그에 진출하며 그 질주를 이어가고 있습니다.
               </Card.Text>
             </Card.Body>
           </Card>
@@ -91,23 +91,23 @@ const Home = (props) => {
             <ToggleButton id="tbg-radio-1" sm={6} className="multi_button" value={1} onClick={() => {
               let copy = [...origin]
               setGoods(copy);
-            }}><p>전체</p>
+            }}>전체
             </ToggleButton>
             <ToggleButton id="tbg-radio-2" sm={6} className="multi_button" value={2} onClick={() => {
               let copy = [...origin].filter(goods => goods.content === 'a')
               setGoods(copy);
             }}>
-              <p>유니폼</p>
+              유니폼
             </ToggleButton>
             <ToggleButton id="tbg-radio-3" sm={6} className="multi_button" value={3} onClick={() => {
               let copy = [...origin].filter(goods => goods.content === 'b')
               setGoods(copy);
-            }}><p>구단용품</p>
+            }}>구단용품
             </ToggleButton>
             <ToggleButton id="tbg-radio-4" sm={6} className="multi_button" value={3} md={6} onClick={() => {
               let copy = [...origin].filter(goods => goods.content === 'c')
               setGoods(copy);
-            }}><p>응원용품</p>
+            }}>응원용품
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
