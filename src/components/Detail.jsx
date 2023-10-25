@@ -90,8 +90,9 @@ const Detail = (props) => {
 
   let [call, setCall] = useState(1);
   let [totalCost, setTotalCost] = useState(selproduct.price)
-  useEffect(() => {
-  }, [totalCost])
+  useEffect(() => {    
+    setTotalCost(selproduct.price)
+  }, [id])
 
   return (
     <>
@@ -220,9 +221,6 @@ const Detail = (props) => {
 
             {/* 장바구니, 구매버튼 */}
             <p>총 가격 : {totalCost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원</p>
-            <Button variant='light' style={{ border: '1px solid #eee', marginRight: '10px', width: '100px', height: '50px' }} onClick={() => {
-              navigator('/my')
-            }}>주문하기</Button>
             <Button
               style={{ width: '100px', height: '50px', border: '1px solid #eee', textAlign: 'center', backgroundColor: "#0B1648", border: "none" }}
               onClick={() => {
@@ -239,6 +237,9 @@ const Detail = (props) => {
                 }));
                 navigator('/cart')
               }}>장바구니</Button>
+            <Button variant='light' style={{ border: '1px solid #eee', marginLeft: '10px', width: '100px', height: '50px' }} onClick={() => {
+              navigator('/my')
+            }}>주문하기</Button>
           </Col>
         </Row>
 
