@@ -136,7 +136,9 @@ const Cart = () => {
           <Alert.Heading>결제금액</Alert.Heading>
           <hr />
           <p>
-            {`총합 : ${subtotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} + ${shippingCost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}(배송비) = ${calculateTotal(subtotal, shippingCost).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 원`}
+            {`총합 : ${subtotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 
+            + ${shippingCost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}(배송비) 
+            = ${calculateTotal(subtotal, shippingCost).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 원`}
           </p>
           <div className="d-flex justify-content-end">
             <Button

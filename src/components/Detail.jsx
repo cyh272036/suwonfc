@@ -177,7 +177,6 @@ const Detail = (props) => {
                   </select>
                 </Card>
 
-                {/* <p>{Selected.size}  {Selected.number}</p> */}
               </>
             }
 
